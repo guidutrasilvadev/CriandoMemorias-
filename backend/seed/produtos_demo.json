@@ -1,0 +1,372 @@
+[
+ {
+  "id": 1,
+  "slug": "festa-abelhinha",
+  "name": "Festa Abelhinha",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Jardim e natureza",
+  "price_cents": 7490,
+  "featured": true
+ },
+ {
+  "id": 2,
+  "slug": "festa-margarida",
+  "name": "Festa Margarida",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Jardim e natureza",
+  "price_cents": 7490,
+  "featured": true
+ },
+ {
+  "id": 3,
+  "slug": "festa-jardim-de-borboletas",
+  "name": "Festa Jardim de Borboletas",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Jardim e natureza",
+  "price_cents": 7490,
+  "featured": true
+ },
+ {
+  "id": 4,
+  "slug": "guarda-chuva-de-amor",
+  "name": "Guarda-chuva de Amor",
+  "type": "molde",
+  "occasion": "Datas comemorativas",
+  "theme": "Outros temas",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 5,
+  "slug": "festa-cerejinha",
+  "name": "Festa Cerejinha",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Jardim e natureza",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 6,
+  "slug": "festa-capivara",
+  "name": "Festa Capivara",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 7,
+  "slug": "festa-balao-menino",
+  "name": "Festa Balão Menino",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Balões e cores",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 8,
+  "slug": "festa-jardim-de-fadas",
+  "name": "Festa Jardim de Fadas",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 9,
+  "slug": "mesa-posta-princesa",
+  "name": "Mesa posta Princesa",
+  "type": "mesa",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 3990,
+  "featured": false
+ },
+ {
+  "id": 10,
+  "slug": "festa-fazendinha-mini-table",
+  "name": "Festa Fazendinha (mini table)",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 11,
+  "slug": "cha-de-bebe-anunciacao",
+  "name": "Chá de Bebê Anunciação",
+  "type": "kit",
+  "occasion": "Chá de bebê",
+  "theme": "Outros temas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 12,
+  "slug": "festa-gatinhos",
+  "name": "Festa Gatinhos",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 13,
+  "slug": "festa-princesas",
+  "name": "Festa Princesas",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 6390,
+  "featured": false
+ },
+ {
+  "id": 14,
+  "slug": "pascoa-coelhinho",
+  "name": "Páscoa (Coelhinho)",
+  "type": "cesta",
+  "occasion": "Datas comemorativas",
+  "theme": "Outros temas",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 15,
+  "slug": "festa-cachorrinho-menina",
+  "name": "Festa Cachorrinho Menina",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 16,
+  "slug": "festa-balao-coracao",
+  "name": "Festa Balão Coração",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Balões e cores",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 17,
+  "slug": "mesa-posta-dia-das-criancas",
+  "name": "Mesa posta Dia das Crianças",
+  "type": "mesa",
+  "occasion": "Datas comemorativas",
+  "theme": "Balões e cores",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 18,
+  "slug": "festa-you-are-my-sunshine",
+  "name": "Festa You Are My Sunshine",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Balões e cores",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 19,
+  "slug": "festa-ganso",
+  "name": "Festa Ganso",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 20,
+  "slug": "festa-fada",
+  "name": "Festa Fada",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 21,
+  "slug": "festa-moranguinho",
+  "name": "Festa Moranguinho",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Jardim e natureza",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 22,
+  "slug": "festa-circo-coral",
+  "name": "Festa Circo Coral",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Outros temas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 23,
+  "slug": "festa-princesa",
+  "name": "Festa Princesa",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 24,
+  "slug": "festa-arco-iris-boho",
+  "name": "Festa Arco-íris Boho",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Balões e cores",
+  "price_cents": 7490,
+  "featured": true
+ },
+ {
+  "id": 25,
+  "slug": "capivara-menina-cesta-ou-mesa-posta",
+  "name": "Capivara Menina (cesta ou mesa posta)",
+  "type": "mesacesta",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 26,
+  "slug": "festa-4-estacoes",
+  "name": "Festa 4 Estações",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Jardim e natureza",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 27,
+  "slug": "festa-sereia",
+  "name": "Festa Sereia",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 7490,
+  "featured": true
+ },
+ {
+  "id": 28,
+  "slug": "dia-dos-pais-cesta",
+  "name": "Dia dos Pais (cesta)",
+  "type": "cesta",
+  "occasion": "Datas comemorativas",
+  "theme": "Outros temas",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 29,
+  "slug": "festa-capivara-menina",
+  "name": "Festa Capivara Menina",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Bichinhos",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 30,
+  "slug": "festa-carrinhos-cidade",
+  "name": "Festa Carrinhos Cidade",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Outros temas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 31,
+  "slug": "festa-bailarina",
+  "name": "Festa Bailarina",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 32,
+  "slug": "festa-pintando-o-7",
+  "name": "Festa Pintando o 7",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Balões e cores",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 33,
+  "slug": "dia-dos-pais-cesta-ou-mesa-posta",
+  "name": "Dia dos Pais (cesta ou mesa posta)",
+  "type": "mesacesta",
+  "occasion": "Datas comemorativas",
+  "theme": "Outros temas",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 34,
+  "slug": "festa-chapeuzinho-vermelho-painel-grande",
+  "name": "Festa Chapeuzinho Vermelho (painel grande)",
+  "type": "kit",
+  "occasion": "Festa infantil",
+  "theme": "Fantasia e princesas",
+  "price_cents": 6390,
+  "featured": false
+ },
+ {
+  "id": 35,
+  "slug": "estampas-balao-menino",
+  "name": "Estampas Balão Menino",
+  "type": "arquivo",
+  "occasion": "Festa infantil",
+  "theme": "Balões e cores",
+  "price_cents": 2990,
+  "featured": false
+ },
+ {
+  "id": 36,
+  "slug": "festa-natal",
+  "name": "Festa Natal",
+  "type": "kit",
+  "occasion": "Datas comemorativas",
+  "theme": "Outros temas",
+  "price_cents": 7490,
+  "featured": false
+ },
+ {
+  "id": 37,
+  "slug": "cha-de-cozinha",
+  "name": "Chá de Cozinha",
+  "type": "kit",
+  "occasion": "Festa adulto",
+  "theme": "Outros temas",
+  "price_cents": 6390,
+  "featured": false
+ }
+]

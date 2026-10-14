@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criando Memórias — Kits digitais para celebrações</title>
+  <meta name="description" content="Kits digitais e papelaria de festa com cuidado em cada detalhe. Escolha a ocasião, veja o tema e prepare a sua celebração com a Criando Memórias.">
+  <meta name="theme-color" content="#FBF8F4">
+  <meta property="og:title" content="Criando Memórias — Kits digitais para celebrações">
+  <meta property="og:description" content="Uma celebração com detalhes do seu jeito. Conheça os kits digitais da Criando Memórias.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Criando Memórias">
+  <meta property="og:locale" content="pt_BR">
+  <!-- Ao definir o domínio: trocar og:image por URL absoluta (https://dominio.com.br/assets/img/og-image.png)
+       e acrescentar og:url e <link rel="canonical">. Redes sociais não leem caminho relativo. -->
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Monograma cm da Criando Memórias, em menta e lavanda, sobre fundo marfim">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/loja.css">
+  <script>
+    /* Decide antes da primeira pintura se a abertura em vídeo aparece (1x por visita, sem animação reduzida). */
+    (function () {
+      var h = document.documentElement; h.classList.add("js");
+      try {
+        var skip = /[?&]semabertura/.test(location.search) || sessionStorage.getItem("cm-abertura") ||
+          (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || /^#kit-/.test(location.hash);
+        if (!skip) { h.classList.add("splash-on"); setTimeout(function () { h.classList.remove("splash-on"); }, 16000); }
+      } catch (e) { /* sem abertura */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#catalogo">Ir para o catálogo</a>
+
+  <!-- Fundo ambiente: formas suaves que acompanham a rolagem -->
+  <div class="ambient" aria-hidden="true">
+    <i class="amb amb-a" data-speed="-0.07"></i>
+    <i class="amb amb-b" data-speed="0.05"></i>
+    <i class="amb amb-c" data-speed="-0.04"></i>
+  </div>
+
+  <!-- Tela de abertura (vídeo). Controlada por app.js -->
+  <div id="splash" class="splash" role="dialog" aria-label="Abertura Criando Memórias">
+    <video id="splash-video" muted playsinline preload="auto" poster="assets/img/abertura-poster.webp" aria-hidden="true">
+      <!-- base para quando o JS não escolhe: app.js troca por 4K / 1080 / 720 conforme a tela e a conexão -->
+      <source src="assets/video/abertura-1080.mp4" type="video/mp4">
+      <source src="assets/video/abertura-720.webm" type="video/webm">
+    </video>
+    <button class="splash-sound" id="splash-sound" type="button" aria-pressed="false" hidden>
+      <svg class="snd-off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9.500h3.500L12 5.500v13l-4.500-4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 9.500l5 5M21 9.500l-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg class="snd-on" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9.500h3.500L12 5.500v13l-4.500-4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M15.500 9a4 4 0 0 1 0 6M18.200 6.500a7.500 7.500 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span class="snd-txt">Ativar som</span>
+    </button>
+    <button class="splash-skip" id="splash-skip" type="button">Pular abertura</button>
+  </div>
+
+  <!-- Barra promocional -->
+  <div class="promo" id="promo" role="region" aria-label="Promoção">
+    <div class="promo-viewport"><div class="promo-track" id="promo-track"></div></div>
+    <a class="promo-link" id="promo-link" href="#catalogo"></a>
+    <button class="promo-close" id="promo-close" type="button" aria-label="Fechar aviso">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+  </div>
+
+  <header class="site-header" id="topo">
+    <div class="wrap">
+      <div class="header-pill">
+        <a class="brand" href="#topo" aria-label="Criando Memórias — início">
+          <img src="assets/img/logo-cm-240.webp" srcset="assets/img/logo-cm-240.webp 240w, assets/img/logo-cm-480.webp 480w" sizes="64px" width="64" height="39" alt="">
+          <span class="brand-name">Criando <span>Memórias</span></span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Principal">
+          <a href="#ocasioes">Ocasiões</a>
+          <a href="#catalogo">Catálogo</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" id="btn-busca" type="button" aria-label="Buscar kits">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </button>
+          <button class="acct-btn" id="btn-conta" type="button" data-loja aria-haspopup="dialog" aria-label="Entrar na sua conta">
+            <span class="acct-ico" id="conta-ico"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+            <span class="acct-label" id="conta-label">Entrar</span>
+          </button>
+          <button class="icon-btn cart-btn" id="btn-carrinho" type="button" data-loja aria-haspopup="dialog" aria-label="Abrir o carrinho, vazio">
+            <svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path d="M6 8.5h12l1 11.5H5z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            <span class="cart-count" id="cart-count" hidden>0</span>
+          </button>
+          <button class="btn btn-primary btn-sm hide-lg" type="button" data-consultar="">Falar com a gente</button>
+          <button class="icon-btn menu-btn" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- INÍCIO: título, chamada e ilustração -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <svg class="hero-line" viewBox="0 0 1600 560" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 230C40 420 190 546 470 540C650 534 760 510 900 450" fill="none" stroke="currentColor" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Comece pela ocasião</p>
+          <h1 id="hero-titulo" class="reveal" style="--d:80ms"><span class="sr-only">Criando Memórias: </span><span class="h1-a">Para cada momento,</span> <em>um tema</em></h1>
+          <p class="lead reveal" style="--d:160ms">Conheça os kits digitais da Criando Memórias e descubra as peças para preparar a sua festa.</p>
+          <div class="hero-cta reveal" style="--d:240ms">
+            <a class="btn btn-primary btn-xl" href="#ocasioes">Explorar ocasiões <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="link-under" href="#catalogo">Ver catálogo</a>
+          </div>
+        </div>
+        <div class="hero-art reveal" id="hero-art" style="--d:120ms"></div>
+      </div>
+    </section>
+
+    <!-- OCASIÕES -->
+    <section class="moments" id="ocasioes" aria-labelledby="oc-titulo">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-soft reveal" id="oc-titulo">Qual momento vamos celebrar?</p>
+        <div class="occasions" id="occasions"></div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="section section-soft catalog-sec" id="catalogo" aria-labelledby="cat-titulo">
+      <svg class="cat-deco" viewBox="1052 0 620 270" preserveAspectRatio="xMaxYMin meet" aria-hidden="true">
+        <path d="M1292 0C1280 44 1312 106 1384 154C1462 206 1566 240 1672 258V0Z" fill="#DCEBE5" fill-opacity=".85"/>
+        <path d="M1082 92C1090 38 1196 18 1280 28C1368 40 1426 84 1420 124C1414 164 1330 178 1252 170C1166 160 1074 150 1082 92Z" fill="#F7E3DE" fill-opacity=".8"/>
+        <path d="M1198 0C1214 72 1304 134 1420 120C1500 110 1594 152 1672 224" fill="none" stroke="#B9A5C1" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M1548 126c-12-10-22-17-22-28 0-8 6-13 13-13 4 0 7 2 9 5 2-3 5-5 9-5 7 0 13 5 13 13 0 11-10 18-22 28z" transform="translate(1536 134) scale(.66) translate(-1548 -106)" fill="#B9A5C1"/>
+      </svg>
+      <div class="wrap wrap-cat">
+        <header class="cat-head reveal">
+          <p class="eyebrow">Catálogo</p>
+          <h2 id="cat-titulo">Encontre o kit <em>da sua festa</em></h2>
+          <p class="cat-sub">Pequenos detalhes para celebrar grandes momentos.</p>
+        </header>
+
+        <div class="toolbar">
+          <label class="search" for="q">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            <span class="sr-only">Buscar por nome ou tema</span>
+            <input id="q" type="search" placeholder="Buscar por nome ou tema" autocomplete="off">
+          </label>
+          <button class="filter-open" id="filtros-abrir" type="button" aria-controls="filtros" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 8h8M17 8h3M4 16h3M12 16h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="14.5" cy="8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="9.5" cy="16" r="2.3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            Filtros <span class="badge" id="filtros-badge" hidden>0</span>
+          </button>
+          <label class="sort" for="ordem">
+            <span class="sr-only">Ordenar por</span>
+            <select id="ordem">
+              <option value="destaque">Em destaque</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+              <option value="az">A–Z</option>
+              <option value="za">Z–A</option>
+            </select>
+          </label>
+        </div>
+        <div class="occ-chips" id="occ-chips" role="group" aria-label="Ocasião"></div>
+
+        <div class="catalog">
+          <div class="backdrop" id="backdrop" hidden></div>
+          <aside class="filters" id="filtros" aria-label="Filtros do catálogo">
+            <div class="filters-head">
+              <h3>Filtros</h3>
+              <button class="icon-btn filters-close" id="filtros-fechar" type="button" aria-label="Fechar filtros">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+              </button>
+            </div>
+            <div class="filters-body" id="filtros-body"></div>
+            <div class="filters-foot">
+              <button class="btn btn-ghost btn-sm" id="filtros-limpar" type="button">Limpar</button>
+              <button class="btn btn-primary btn-sm" id="filtros-aplicar" type="button">Aplicar</button>
+            </div>
+          </aside>
+
+          <div class="results">
+            <div class="results-bar">
+              <p class="count" id="contagem" role="status" aria-live="polite"></p>
+              <div class="chips" id="chips" aria-label="Filtros ativos"></div>
+              <div class="view-toggle" role="group" aria-label="Modo de exibição">
+                <button type="button" id="ver-grade" data-view="grade" aria-pressed="true" aria-label="Ver em grade">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6" fill="currentColor"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6" fill="currentColor"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6" fill="currentColor"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6" fill="currentColor"/></svg>
+                </button>
+                <button type="button" id="ver-lista" data-view="lista" aria-pressed="false" aria-label="Ver em lista">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="grid" id="grade"></div>
+            <div class="empty" id="vazio" hidden>
+              <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path d="M8 52V30a24 24 0 0 1 48 0v22z" fill="none" stroke="#B9A5C1" stroke-width="2.5"/><circle cx="32" cy="34" r="8" fill="#9DD2C8" fill-opacity=".6"/></svg>
+              <h3>Nenhum kit encontrado</h3>
+              <p>Tente outra busca ou limpe os filtros para ver todo o catálogo.</p>
+              <button class="btn btn-ghost btn-sm" type="button" id="vazio-limpar">Limpar filtros</button>
+            </div>
+            <div class="more" id="mais-wrap">
+              <span class="more-line" aria-hidden="true"></span>
+              <button class="btn-explore" id="mais" type="button"><span id="mais-txt">Explorar todos os kits</span> <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <span class="more-line" aria-hidden="true"></span>
+              <p class="sr-only" id="mais-status" role="status"></p>
+            </div>
+            <p class="note">Catálogo de demonstração: nomes, preços e capas são provisórios e serão substituídos pelos produtos reais da Criando Memórias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="section section-soft feat" id="destaques" aria-labelledby="dest-titulo">
+      <svg class="feat-wave" viewBox="0 0 1672 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M470 152C650 62 900 10 1130 14C1330 18 1450 80 1520 78C1566 76 1610 50 1672 24" fill="none" stroke="#C4B4D2" stroke-width="1.6" stroke-linecap="round"/>
+        <path transform="translate(1573 60)" d="M0 -15C2 -5 5 -2 15 0C5 2 2 5 0 15C-2 5 -5 2 -15 0C-5 -2 -2 -5 0 -15Z" fill="#B9A5C1"/>
+      </svg>
+      <div class="wrap wrap-feat">
+        <header class="feat-head reveal">
+          <div>
+            <p class="feat-eyebrow">Em destaque</p>
+            <h2 id="dest-titulo">Alguns kits merecem <em>um olhar especial.</em></h2>
+          </div>
+          <a class="btn-line" href="#catalogo">Ver todos os kits <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </header>
+        <div class="feat-grid">
+          <article class="feat-main reveal" id="feat-main"></article>
+          <div class="feat-side reveal" style="--d:120ms">
+            <p class="feat-label">Outros encantos</p>
+            <div class="feat-list" id="feat-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-mark" src="assets/img/logo-cm-480.webp" width="480" height="290" alt="" loading="lazy" aria-hidden="true">
+    <div class="wrap footer-in">
+      <div class="footer-brand">
+        <img src="assets/img/logo-cm-240.webp" width="72" height="43" alt="" loading="lazy">
+        <p class="footer-name">Criando Memórias</p>
+        <p class="footer-tag">Detalhes para momentos que ficam.</p>
+      </div>
+      <nav class="footer-col footer-nav" aria-labelledby="f-explore">
+        <p class="footer-label" id="f-explore">Explore</p>
+        <a href="#ocasioes"><span>Ocasiões</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#catalogo"><span>Catálogo</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </nav>
+      <div class="footer-col footer-talk">
+        <p class="footer-label">Vamos conversar?</p>
+        <p class="footer-text">Conte com a gente para escolher seu kit.</p>
+        <button class="btn-chat" type="button" data-consultar="">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 4.2c-4.6 0-8.2 3.2-8.2 7.3 0 1.9.8 3.6 2.1 4.9L5 20l3.9-1.6c1 .3 2 .5 3.1.5 4.6 0 8.2-3.200 8.2-7.300S16.600 4.200 12 4.200z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Falar com a gente
+        </button>
+      </div>
+    </div>
+    <div class="wrap"><div class="footer-base"><p>© <span id="ano">2026</span> Criando Memórias. Todos os direitos reservados.</p>
+      <svg viewBox="-12 -12 24 24" width="20" height="20" aria-hidden="true"><path d="M0 -11C1.500 -4 4 -1.500 11 0C4 1.500 1.500 4 0 11C-1.500 4 -4 1.500 -11 0C-4 -1.500 -1.500 -4 0 -11Z" fill="#7FC8B8"/></svg></div></div>
+  </footer>
+
+  <!-- Página do produto -->
+  <dialog id="produto" class="product" aria-labelledby="p-nome">
+    <button class="product-close" id="p-fechar" type="button" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <div class="product-in">
+      <div class="product-cover" id="p-capa"></div>
+      <div class="product-info">
+        <p class="eyebrow" id="p-ocasiao"></p>
+        <h2 id="p-nome"></h2>
+        <p class="product-type"><span class="tag" id="p-tipo"></span><span class="tag tag-digital">Produto digital</span></p>
+        <p class="product-price" id="p-preco"></p>
+        <p class="product-perk" id="p-perk" data-loja hidden></p>
+        <p class="product-lead">Você recebe arquivos digitais, não uma festa montada nem itens físicos.</p>
+        <div class="product-actions">
+          <button class="btn btn-primary" id="p-add" type="button" data-loja>Adicionar ao carrinho</button>
+          <button class="btn btn-ghost" id="p-consultar" type="button">Consultar este kit</button>
+          <button class="btn btn-ghost" id="p-voltar" type="button">Voltar ao catálogo</button>
+        </div>
+        <dl class="spec" id="p-spec"></dl>
+        <p class="note">Capa ilustrativa. As fotos reais do kit entram aqui, junto com a lista completa de peças.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Carrinho -->
+  <dialog id="carrinho" class="drawer" aria-labelledby="car-titulo">
+    <div class="drawer-in">
+      <header class="drawer-head">
+        <h2 id="car-titulo">Seu carrinho</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Fechar o carrinho">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </header>
+      <div class="drawer-body" id="car-body"></div>
+      <footer class="drawer-foot" id="car-foot"></footer>
+    </div>
+  </dialog>
+
+  <!-- Minha conta -->
+  <dialog id="conta" class="drawer" aria-labelledby="conta-titulo">
+    <div class="drawer-in">
+      <header class="drawer-head">
+        <h2 id="conta-titulo">Minha conta</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Fechar minha conta">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </header>
+      <div class="drawer-body" id="conta-body"></div>
+      <footer class="drawer-foot" id="conta-foot"></footer>
+    </div>
+  </dialog>
+
+  <!-- Entrar / criar conta (com os benefícios) -->
+  <dialog id="entrar" class="modal auth" aria-labelledby="auth-titulo">
+    <button class="modal-close" type="button" data-close aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <div class="auth-in">
+      <aside class="auth-perks" id="auth-perks"></aside>
+      <div class="auth-main" id="auth-main"></div>
+    </div>
+  </dialog>
+
+  <!-- Finalizar compra -->
+  <dialog id="checkout" class="modal checkout" aria-labelledby="co-titulo">
+    <button class="modal-close" type="button" data-close aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <div class="co-in">
+      <div class="co-main" id="co-main"></div>
+      <aside class="co-side" id="co-side" aria-label="Resumo do pedido"></aside>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" popover="manual" role="status" aria-live="polite" hidden></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/covers.js"></script>
+  <script src="assets/js/hero.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/loja.js"></script>
+  <script src="assets/js/entrar.js"></script>
+  <script src="assets/js/conta.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>

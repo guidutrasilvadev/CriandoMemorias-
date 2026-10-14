@@ -1,0 +1,11 @@
+# Dependências de execução (versões testadas em Python 3.9; funciona também em 3.11+)
+fastapi==0.115.6
+uvicorn==0.32.1
+SQLAlchemy==2.0.36
+pydantic==2.13.5
+PyJWT==2.10.1
+argon2-cffi==23.1.0
+httpx==0.28.1
+google-auth==2.37.0
+requests==2.32.3
+# Para PostgreSQL em produção, acrescente: psycopg[binary]==3.2.3
